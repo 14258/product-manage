@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.productmanage.mapper.UserMapper">
+
+
+    <insert id="save">
+
+        INSERT INTO `manage`.`user` (`username`, `pwd`)
+        VALUES (#{user.name}, #{user.pwd});
+
+    </insert>
+
+    <select id="findByNameAndPwd" resultType="User">
+        select * from user where username=#{user.name} and pwd=#{user.pwd}
+    </select>
+
+</mapper>
